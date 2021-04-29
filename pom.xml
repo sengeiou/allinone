@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>wiki.dwx</groupId>
 	<artifactId>allinone</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<name>allinone</name>
 	<description>Dwx all in one project for Spring Boot</description>
 	<properties>
