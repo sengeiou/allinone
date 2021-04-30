@@ -1,0 +1,11 @@
+server:
+  port: 4040
+
+wechat:
+  cp:
+    corpId: wwee620ba9112a63d7
+    appConfigs:
+      - agentId: 1000002
+        secret: ixKGKSNmCJSeySiup841W0cnN7d2y1eQhUfTzUq900U
+        token: aB6QyzJFzpRUV0ucJwB9Rvbj
+        aesKey: 7AWWhalFltQBvCfj7AFBoGLiNabjteNePg3WHbWLkF3
