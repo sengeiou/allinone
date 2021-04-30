@@ -13,7 +13,7 @@ import wiki.dwx.allinone.config.WxCpConfig;
 @Component
 public class ScheduleTask {
 
-    @Scheduled(cron = "0 0 0/1 * * ? *")
+    @Scheduled(cron = "0 0 0/1 * * ? ")
     public void doTasks() throws WxErrorException {
         final WxCpService wxCpService = WxCpConfig.getCpService(1000002);
 
