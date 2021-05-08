@@ -35,9 +35,6 @@ class AllinoneApplicationTests {
             Iptv iptv = new Iptv();
             iptv.f = str;
             iptv.url = list.get(i + 1);
-            if ("35".equals(m.group(0))) {
-                System.out.println(m.group(0) + " " + str);
-            }
             end.put(Integer.valueOf(m.group(0)), iptv);
         }
 

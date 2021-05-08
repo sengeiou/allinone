@@ -255,7 +255,7 @@ http://10.0.0.254:4022/rtp/225.1.0.204:1025
 http://10.0.0.254:4022/rtp/225.1.0.205:1025
 #EXTINF:-1 tvg-id="36" tvg-name="淘Baby" group-title="精品连播",淘Baby
 http://10.0.0.254:4022/rtp/225.1.0.206:1025
-#EXTINF:-1 tvg-id="35" tvg-name="萌宠TV" group-title="精品连播",萌宠TV
+#EXTINF:-1 tvg-id="34" tvg-name="萌宠TV" group-title="精品连播",萌宠TV
 http://10.0.0.254:4022/rtp/225.1.0.210:1025
 #EXTINF:-1 tvg-id="39" tvg-name="淘娱乐" group-title="精品连播",淘娱乐
 http://10.0.0.254:4022/rtp/225.1.0.212:1025
