@@ -48,7 +48,8 @@ class AllinoneApplicationTests {
         System.out.println(list.get(0));
         for (int i = 0; i < keyList.size(); i++) {
             Iptv iptv = end.get(keyList.get(i));
-            System.out.println(iptv.f);
+            String ext = String.format("#EXTINF:0 channelID=\"x-ID.%d\" tvg-chno=\"%d\"", keyList.get(i), keyList.get(i));
+            System.out.println(iptv.f.replace("#EXTINF:-1", ext));
             System.out.println(iptv.url);
         }
     }
