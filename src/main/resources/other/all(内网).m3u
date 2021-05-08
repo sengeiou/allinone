@@ -1,0 +1,359 @@
+#EXTM3U name="北京电信IPTV"
+#EXTINF:-1 tvg-id="328" tvg-name="风尚生活" group-title="体验频道",风尚生活
+http://10.0.0.254:4022/rtp/225.1.0.56:8001
+#EXTINF:-1 tvg-id="327" tvg-name="幸福娱乐" group-title="体验频道",幸福娱乐
+http://10.0.0.254:4022/rtp/225.1.0.57:8001
+#EXTINF:-1 tvg-id="326" tvg-name="幸福剧场" group-title="体验频道",幸福剧场
+http://10.0.0.254:4022/rtp/225.1.0.58:8001
+#EXTINF:-1 tvg-id="325" tvg-name="每日影院" group-title="体验频道",每日影院
+http://10.0.0.254:4022/rtp/225.1.0.59:8001
+#EXTINF:-1 tvg-id="199" tvg-name="聚鲨国际" group-title="体验频道",聚鲨国际
+http://10.0.0.254:4022/rtp/225.1.0.60:8001
+#EXTINF:-1 tvg-id="198" tvg-name="聚鲨生活" group-title="体验频道",聚鲨生活
+http://10.0.0.254:4022/rtp/225.1.0.61:8001
+#EXTINF:-1 tvg-id="197" tvg-name="聚鲨健康" group-title="体验频道",聚鲨健康
+http://10.0.0.254:4022/rtp/225.1.0.62:8001
+#EXTINF:-1 tvg-id="196" tvg-name="聚鲨北京" group-title="体验频道",聚鲨北京
+http://10.0.0.254:4022/rtp/225.1.0.63:8001
+#EXTINF:-1 tvg-id="119" tvg-name="聚鲨环球精选" group-title="体验频道",聚鲨环球精选
+http://10.0.0.254:4022/rtp/225.1.0.64:8001
+#EXTINF:-1 tvg-id="99" tvg-name="聚鲨国际高清" group-title="体验频道",聚鲨国际高清
+http://10.0.0.254:4022/rtp/225.1.0.65:8001
+#EXTINF:-1 tvg-id="98" tvg-name="聚鲨生活高清" group-title="体验频道",聚鲨生活高清
+http://10.0.0.254:4022/rtp/225.1.0.66:8001
+#EXTINF:-1 tvg-id="32" tvg-name="聚鲨健康高清" group-title="体验频道",聚鲨健康高清
+http://10.0.0.254:4022/rtp/225.1.0.67:8001
+#EXTINF:-1 tvg-id="31" tvg-name="聚鲨北京高清" group-title="体验频道",聚鲨北京高清
+http://10.0.0.254:4022/rtp/225.1.0.68:8001
+#EXTINF:-1 tvg-id="19" tvg-name="聚鲨环球精选高清" group-title="体验频道",聚鲨环球精选高清
+http://10.0.0.254:4022/rtp/225.1.0.69:8001
+#EXTINF:-1 tvg-id="20" tvg-name="淘精彩" group-title="体验频道",淘精彩
+http://10.0.0.254:4022/rtp/225.1.0.72:8001
+#EXTINF:-1 tvg-id="108" tvg-name="CCTV-8" group-title="央视频道",CCTV-8
+http://10.0.0.254:4022/rtp/225.1.0.73:8001
+#EXTINF:-1 tvg-id="106" tvg-name="CCTV-6" group-title="央视频道",CCTV-6
+http://10.0.0.254:4022/rtp/225.1.0.74:8001
+#EXTINF:-1 tvg-id="105" tvg-name="CCTV-5" group-title="央视频道",CCTV-5
+http://10.0.0.254:4022/rtp/225.1.0.75:8001
+#EXTINF:-1 tvg-id="103" tvg-name="CCTV-3" group-title="央视频道",CCTV-3
+http://10.0.0.254:4022/rtp/225.1.0.76:8001
+#EXTINF:-1 tvg-id="8" tvg-name="CCTV-8高清" group-title="央视频道",CCTV-8高清
+http://10.0.0.254:4022/rtp/225.1.0.77:8001
+#EXTINF:-1 tvg-id="6" tvg-name="CCTV-6高清" group-title="央视频道",CCTV-6高清
+http://10.0.0.254:4022/rtp/225.1.0.78:8001
+#EXTINF:-1 tvg-id="5" tvg-name="CCTV-5高清" group-title="央视频道",CCTV-5高清
+http://10.0.0.254:4022/rtp/225.1.0.79:8001
+#EXTINF:-1 tvg-id="3" tvg-name="CCTV-3高清" group-title="央视频道",CCTV-3高清
+http://10.0.0.254:4022/rtp/225.1.0.80:8001
+#EXTINF:-1 tvg-id="303" tvg-name="密云电视台" group-title="体验频道",密云电视台
+http://10.0.0.254:4022/rtp/225.1.0.86:8001
+#EXTINF:-1 tvg-id="321" tvg-name="茶" group-title="精品连播",茶
+http://10.0.0.254:4022/rtp/225.1.0.96:1025
+#EXTINF:-1 tvg-id="320" tvg-name="快乐垂钓" group-title="精品连播",快乐垂钓
+http://10.0.0.254:4022/rtp/225.1.0.97:1025
+#EXTINF:-1 tvg-id="168" tvg-name="南方卫视" group-title="卫视频道",南方卫视
+http://10.0.0.254:4022/rtp/225.1.0.99:1025
+#EXTINF:-1 tvg-id="302" tvg-name="北京朝阳" group-title="体验频道",北京朝阳
+http://10.0.0.254:4022/rtp/225.1.0.100:1025
+#EXTINF:-1 tvg-id="401" tvg-name="爱上4K" group-title="精品连播",爱上4K
+http://10.0.0.254:4022/rtp/225.1.0.101:1025
+#EXTINF:-1 tvg-id="4" tvg-name="CCTV-4高清" group-title="央视频道",CCTV-4高清
+http://10.0.0.254:4022/rtp/225.1.0.102:1025
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV-1高清" group-title="央视频道",CCTV-1高清
+http://10.0.0.254:4022/rtp/225.1.0.103:1025
+#EXTINF:-1 tvg-id="2" tvg-name="CCTV-2高清" group-title="央视频道",CCTV-2高清
+http://10.0.0.254:4022/rtp/225.1.0.104:1025
+#EXTINF:-1 tvg-id="7" tvg-name="CCTV-7高清" group-title="央视频道",CCTV-7高清
+http://10.0.0.254:4022/rtp/225.1.0.105:1025
+#EXTINF:-1 tvg-id="9" tvg-name="CCTV-9高清" group-title="央视频道",CCTV-9高清
+http://10.0.0.254:4022/rtp/225.1.0.106:1025
+#EXTINF:-1 tvg-id="10" tvg-name="CCTV-10高清" group-title="央视频道",CCTV-10高清
+http://10.0.0.254:4022/rtp/225.1.0.107:1025
+#EXTINF:-1 tvg-id="12" tvg-name="CCTV-12高清" group-title="央视频道",CCTV-12高清
+http://10.0.0.254:4022/rtp/225.1.0.108:1025
+#EXTINF:-1 tvg-id="14" tvg-name="CCTV-14高清" group-title="央视频道",CCTV-14高清
+http://10.0.0.254:4022/rtp/225.1.0.109:1025
+#EXTINF:-1 tvg-id="18" tvg-name="CCTV-5+" group-title="央视频道",CCTV-5+
+http://10.0.0.254:4022/rtp/225.1.0.110:1025
+#EXTINF:-1 tvg-id="21" tvg-name="BTV北京卫视高清" group-title="卫视频道",BTV北京卫视高清
+http://10.0.0.254:4022/rtp/225.1.0.111:1025
+#EXTINF:-1 tvg-id="22" tvg-name="BTV文艺高清" group-title="卫视频道",BTV文艺高清
+http://10.0.0.254:4022/rtp/225.1.0.112:1025
+#EXTINF:-1 tvg-id="26" tvg-name="BTV冬奥纪实高清" group-title="卫视频道",BTV冬奥纪实高清
+http://10.0.0.254:4022/rtp/225.1.0.113:1025
+#EXTINF:-1 tvg-id="37" tvg-name="淘剧场" group-title="精品连播",淘剧场
+http://10.0.0.254:4022/rtp/225.1.0.114:1025
+#EXTINF:-1 tvg-id="38" tvg-name="淘电影" group-title="精品连播",淘电影
+http://10.0.0.254:4022/rtp/225.1.0.115:1025
+#EXTINF:-1 tvg-id="30" tvg-name="大健康" group-title="精品连播",大健康
+http://10.0.0.254:4022/rtp/225.1.0.116:1025
+#EXTINF:-1 tvg-id="41" tvg-name="湖南卫视高清" group-title="卫视频道",湖南卫视高清
+http://10.0.0.254:4022/rtp/225.1.0.117:1025
+#EXTINF:-1 tvg-id="53" tvg-name="黑龙江卫视高清" group-title="卫视频道",黑龙江卫视高清
+http://10.0.0.254:4022/rtp/225.1.0.118:1025
+#EXTINF:-1 tvg-id="74" tvg-name="深圳卫视高清" group-title="卫视频道",深圳卫视高清
+http://10.0.0.254:4022/rtp/225.1.0.119:1025
+#EXTINF:-1 tvg-id="44" tvg-name="江苏卫视高清" group-title="卫视频道",江苏卫视高清
+http://10.0.0.254:4022/rtp/225.1.0.120:1025
+#EXTINF:-1 tvg-id="45" tvg-name="东方卫视高清" group-title="卫视频道",东方卫视高清
+http://10.0.0.254:4022/rtp/225.1.0.121:1025
+#EXTINF:-1 tvg-id="46" tvg-name="浙江卫视高清" group-title="卫视频道",浙江卫视高清
+http://10.0.0.254:4022/rtp/225.1.0.122:1025
+#EXTINF:-1 tvg-id="47" tvg-name="湖北卫视高清" group-title="卫视频道",湖北卫视高清
+http://10.0.0.254:4022/rtp/225.1.0.123:1025
+#EXTINF:-1 tvg-id="48" tvg-name="天津卫视高清" group-title="卫视频道",天津卫视高清
+http://10.0.0.254:4022/rtp/225.1.0.124:1025
+#EXTINF:-1 tvg-id="42" tvg-name="广东卫视高清" group-title="卫视频道",广东卫视高清
+http://10.0.0.254:4022/rtp/225.1.0.125:1025
+#EXTINF:-1 tvg-id="50" tvg-name="山东卫视高清" group-title="卫视频道",山东卫视高清
+http://10.0.0.254:4022/rtp/225.1.0.126:1025
+#EXTINF:-1 tvg-id="51" tvg-name="辽宁卫视高清" group-title="卫视频道",辽宁卫视高清
+http://10.0.0.254:4022/rtp/225.1.0.127:1025
+#EXTINF:-1 tvg-id="52" tvg-name="安徽卫视高清" group-title="卫视频道",安徽卫视高清
+http://10.0.0.254:4022/rtp/225.1.0.128:1025
+#EXTINF:-1 tvg-id="75" tvg-name="纪实高清" group-title="卫视频道",纪实高清
+http://10.0.0.254:4022/rtp/225.1.0.129:1025
+#EXTINF:-1 tvg-id="101" tvg-name="CCTV-1" group-title="央视频道",CCTV-1
+http://10.0.0.254:4022/rtp/225.1.0.130:1025
+#EXTINF:-1 tvg-id="102" tvg-name="CCTV-2" group-title="央视频道",CCTV-2
+http://10.0.0.254:4022/rtp/225.1.0.131:1025
+#EXTINF:-1 tvg-id="104" tvg-name="CCTV-4" group-title="央视频道",CCTV-4
+http://10.0.0.254:4022/rtp/225.1.0.132:1025
+#EXTINF:-1 tvg-id="107" tvg-name="CCTV-7" group-title="央视频道",CCTV-7
+http://10.0.0.254:4022/rtp/225.1.0.133:1025
+#EXTINF:-1 tvg-id="109" tvg-name="CCTV-9" group-title="央视频道",CCTV-9
+http://10.0.0.254:4022/rtp/225.1.0.134:1025
+#EXTINF:-1 tvg-id="110" tvg-name="CCTV-10" group-title="央视频道",CCTV-10
+http://10.0.0.254:4022/rtp/225.1.0.135:1025
+#EXTINF:-1 tvg-id="111" tvg-name="CCTV-11" group-title="央视频道",CCTV-11
+http://10.0.0.254:4022/rtp/225.1.0.136:1025
+#EXTINF:-1 tvg-id="112" tvg-name="CCTV-12" group-title="央视频道",CCTV-12
+http://10.0.0.254:4022/rtp/225.1.0.137:1025
+#EXTINF:-1 tvg-id="113" tvg-name="CCTV-13" group-title="央视频道",CCTV-13
+http://10.0.0.254:4022/rtp/225.1.0.138:1025
+#EXTINF:-1 tvg-id="114" tvg-name="CCTV-14" group-title="央视频道",CCTV-14
+http://10.0.0.254:4022/rtp/225.1.0.139:1025
+#EXTINF:-1 tvg-id="115" tvg-name="CCTV-15" group-title="央视频道",CCTV-15
+http://10.0.0.254:4022/rtp/225.1.0.140:1025
+#EXTINF:-1 tvg-id="116" tvg-name="CGTN" group-title="央视频道",CGTN
+http://10.0.0.254:4022/rtp/225.1.0.141:1025
+#EXTINF:-1 tvg-id="121" tvg-name="BTV北京卫视" group-title="卫视频道",BTV北京卫视
+http://10.0.0.254:4022/rtp/225.1.0.142:1025
+#EXTINF:-1 tvg-id="122" tvg-name="BTV文艺" group-title="卫视频道",BTV文艺
+http://10.0.0.254:4022/rtp/225.1.0.143:1025
+#EXTINF:-1 tvg-id="123" tvg-name="BTV科教" group-title="卫视频道",BTV科教
+http://10.0.0.254:4022/rtp/225.1.0.144:1025
+#EXTINF:-1 tvg-id="124" tvg-name="BTV影视" group-title="卫视频道",BTV影视
+http://10.0.0.254:4022/rtp/225.1.0.145:1025
+#EXTINF:-1 tvg-id="125" tvg-name="BTV财经" group-title="卫视频道",BTV财经
+http://10.0.0.254:4022/rtp/225.1.0.146:1025
+#EXTINF:-1 tvg-id="126" tvg-name="BTV冬奥纪实" group-title="卫视频道",BTV冬奥纪实
+http://10.0.0.254:4022/rtp/225.1.0.147:1025
+#EXTINF:-1 tvg-id="127" tvg-name="BTV生活" group-title="卫视频道",BTV生活
+http://10.0.0.254:4022/rtp/225.1.0.148:1025
+#EXTINF:-1 tvg-id="128" tvg-name="BTV青年" group-title="卫视频道",BTV青年
+http://10.0.0.254:4022/rtp/225.1.0.149:1025
+#EXTINF:-1 tvg-id="129" tvg-name="BTV新闻" group-title="卫视频道",BTV新闻
+http://10.0.0.254:4022/rtp/225.1.0.150:1025
+#EXTINF:-1 tvg-id="130" tvg-name="BTV卡酷少儿" group-title="卫视频道",BTV卡酷少儿
+http://10.0.0.254:4022/rtp/225.1.0.151:1025
+#EXTINF:-1 tvg-id="131" tvg-name="BTV国际频道" group-title="卫视频道",BTV国际频道
+http://10.0.0.254:4022/rtp/225.1.0.152:1025
+#EXTINF:-1 tvg-id="132" tvg-name="湖南卫视" group-title="卫视频道",湖南卫视
+http://10.0.0.254:4022/rtp/225.1.0.153:1025
+#EXTINF:-1 tvg-id="133" tvg-name="浙江卫视" group-title="卫视频道",浙江卫视
+http://10.0.0.254:4022/rtp/225.1.0.154:1025
+#EXTINF:-1 tvg-id="134" tvg-name="江苏卫视" group-title="卫视频道",江苏卫视
+http://10.0.0.254:4022/rtp/225.1.0.155:1025
+#EXTINF:-1 tvg-id="135" tvg-name="安徽卫视" group-title="卫视频道",安徽卫视
+http://10.0.0.254:4022/rtp/225.1.0.156:1025
+#EXTINF:-1 tvg-id="136" tvg-name="天津卫视" group-title="卫视频道",天津卫视
+http://10.0.0.254:4022/rtp/225.1.0.157:1025
+#EXTINF:-1 tvg-id="137" tvg-name="辽宁卫视" group-title="卫视频道",辽宁卫视
+http://10.0.0.254:4022/rtp/225.1.0.158:1025
+#EXTINF:-1 tvg-id="138" tvg-name="山东卫视" group-title="卫视频道",山东卫视
+http://10.0.0.254:4022/rtp/225.1.0.159:1025
+#EXTINF:-1 tvg-id="164" tvg-name="云南卫视" group-title="卫视频道",云南卫视
+http://10.0.0.254:4022/rtp/225.1.0.160:1025
+#EXTINF:-1 tvg-id="140" tvg-name="河南卫视" group-title="卫视频道",河南卫视
+http://10.0.0.254:4022/rtp/225.1.0.161:1025
+#EXTINF:-1 tvg-id="141" tvg-name="黑龙江卫视" group-title="卫视频道",黑龙江卫视
+http://10.0.0.254:4022/rtp/225.1.0.162:1025
+#EXTINF:-1 tvg-id="142" tvg-name="四川卫视" group-title="卫视频道",四川卫视
+http://10.0.0.254:4022/rtp/225.1.0.163:1025
+#EXTINF:-1 tvg-id="143" tvg-name="江西卫视" group-title="卫视频道",江西卫视
+http://10.0.0.254:4022/rtp/225.1.0.164:1025
+#EXTINF:-1 tvg-id="144" tvg-name="贵州卫视" group-title="卫视频道",贵州卫视
+http://10.0.0.254:4022/rtp/225.1.0.165:1025
+#EXTINF:-1 tvg-id="145" tvg-name="深圳卫视" group-title="卫视频道",深圳卫视
+http://10.0.0.254:4022/rtp/225.1.0.166:1025
+#EXTINF:-1 tvg-id="146" tvg-name="湖北卫视" group-title="卫视频道",湖北卫视
+http://10.0.0.254:4022/rtp/225.1.0.167:1025
+#EXTINF:-1 tvg-id="147" tvg-name="东方卫视" group-title="卫视频道",东方卫视
+http://10.0.0.254:4022/rtp/225.1.0.168:1025
+#EXTINF:-1 tvg-id="148" tvg-name="重庆卫视" group-title="卫视频道",重庆卫视
+http://10.0.0.254:4022/rtp/225.1.0.169:1025
+#EXTINF:-1 tvg-id="149" tvg-name="东南卫视" group-title="卫视频道",东南卫视
+http://10.0.0.254:4022/rtp/225.1.0.170:1025
+#EXTINF:-1 tvg-id="150" tvg-name="河北卫视" group-title="卫视频道",河北卫视
+http://10.0.0.254:4022/rtp/225.1.0.171:1025
+#EXTINF:-1 tvg-id="151" tvg-name="广东卫视" group-title="卫视频道",广东卫视
+http://10.0.0.254:4022/rtp/225.1.0.172:1025
+#EXTINF:-1 tvg-id="152" tvg-name="广西卫视" group-title="卫视频道",广西卫视
+http://10.0.0.254:4022/rtp/225.1.0.173:1025
+#EXTINF:-1 tvg-id="153" tvg-name="吉林卫视" group-title="卫视频道",吉林卫视
+http://10.0.0.254:4022/rtp/225.1.0.174:1025
+#EXTINF:-1 tvg-id="154" tvg-name="陕西卫视" group-title="卫视频道",陕西卫视
+http://10.0.0.254:4022/rtp/225.1.0.175:1025
+#EXTINF:-1 tvg-id="155" tvg-name="山西卫视" group-title="卫视频道",山西卫视
+http://10.0.0.254:4022/rtp/225.1.0.176:1025
+#EXTINF:-1 tvg-id="156" tvg-name="内蒙古卫视" group-title="卫视频道",内蒙古卫视
+http://10.0.0.254:4022/rtp/225.1.0.177:1025
+#EXTINF:-1 tvg-id="157" tvg-name="青海卫视" group-title="卫视频道",青海卫视
+http://10.0.0.254:4022/rtp/225.1.0.178:1025
+#EXTINF:-1 tvg-id="158" tvg-name="海南卫视" group-title="卫视频道",海南卫视
+http://10.0.0.254:4022/rtp/225.1.0.179:1025
+#EXTINF:-1 tvg-id="159" tvg-name="宁夏卫视" group-title="卫视频道",宁夏卫视
+http://10.0.0.254:4022/rtp/225.1.0.180:1025
+#EXTINF:-1 tvg-id="160" tvg-name="西藏卫视" group-title="卫视频道",西藏卫视
+http://10.0.0.254:4022/rtp/225.1.0.181:1025
+#EXTINF:-1 tvg-id="161" tvg-name="新疆卫视" group-title="卫视频道",新疆卫视
+http://10.0.0.254:4022/rtp/225.1.0.182:1025
+#EXTINF:-1 tvg-id="162" tvg-name="甘肃卫视" group-title="卫视频道",甘肃卫视
+http://10.0.0.254:4022/rtp/225.1.0.183:1025
+#EXTINF:-1 tvg-id="169" tvg-name="金鹰卡通" group-title="卫视频道",金鹰卡通
+http://10.0.0.254:4022/rtp/225.1.0.184:1025
+#EXTINF:-1 tvg-id="165" tvg-name="财富天下" group-title="卫视频道",财富天下
+http://10.0.0.254:4022/rtp/225.1.0.186:1025
+#EXTINF:-1 tvg-id="166" tvg-name="厦门卫视" group-title="卫视频道",厦门卫视
+http://10.0.0.254:4022/rtp/225.1.0.187:1025
+#EXTINF:-1 tvg-id="167" tvg-name="兵团卫视" group-title="卫视频道",兵团卫视
+http://10.0.0.254:4022/rtp/225.1.0.188:1025
+#EXTINF:-1 tvg-id="171" tvg-name="CETV1" group-title="卫视频道",CETV1
+http://10.0.0.254:4022/rtp/225.1.0.190:1025
+#EXTINF:-1 tvg-id="170" tvg-name="嘉佳卡通" group-title="卫视频道",嘉佳卡通
+http://10.0.0.254:4022/rtp/225.1.0.191:1025
+#EXTINF:-1 tvg-id="201" tvg-name="收视指南" group-title="体验频道",收视指南
+http://10.0.0.254:4022/rtp/225.1.0.192:1025
+#EXTINF:-1 tvg-id="202" tvg-name="热播剧场" group-title="体验频道",热播剧场
+http://10.0.0.254:4022/rtp/225.1.0.193:1025
+#EXTINF:-1 tvg-id="203" tvg-name="经典电影" group-title="体验频道",经典电影
+http://10.0.0.254:4022/rtp/225.1.0.194:1025
+#EXTINF:-1 tvg-id="204" tvg-name="魅力时尚" group-title="体验频道",魅力时尚
+http://10.0.0.254:4022/rtp/225.1.0.195:1025
+#EXTINF:-1 tvg-id="207" tvg-name="少儿动画" group-title="体验频道",少儿动画
+http://10.0.0.254:4022/rtp/225.1.0.198:1025
+#EXTINF:-1 tvg-id="324" tvg-name="熊猫频道" group-title="体验频道",熊猫频道
+http://10.0.0.254:4022/rtp/225.1.0.201:1025
+#EXTINF:-1 tvg-id="367" tvg-name="墨宝" group-title="体验频道",墨宝
+http://10.0.0.254:4022/rtp/225.1.0.202:1025
+#EXTINF:-1 tvg-id="369" tvg-name="台球" group-title="体验频道",台球
+http://10.0.0.254:4022/rtp/225.1.0.203:1025
+#EXTINF:-1 tvg-id="372" tvg-name="高网" group-title="体验频道",高网
+http://10.0.0.254:4022/rtp/225.1.0.204:1025
+#EXTINF:-1 tvg-id="40" tvg-name="4K超清" group-title="精品连播",4K超清
+http://10.0.0.254:4022/rtp/225.1.0.205:1025
+#EXTINF:-1 tvg-id="36" tvg-name="淘Baby" group-title="精品连播",淘Baby
+http://10.0.0.254:4022/rtp/225.1.0.206:1025
+#EXTINF:-1 tvg-id="35" tvg-name="萌宠TV" group-title="精品连播",萌宠TV
+http://10.0.0.254:4022/rtp/225.1.0.210:1025
+#EXTINF:-1 tvg-id="39" tvg-name="淘娱乐" group-title="精品连播",淘娱乐
+http://10.0.0.254:4022/rtp/225.1.0.212:1025
+#EXTINF:-1 tvg-id="378" tvg-name="星影" group-title="体验频道",星影
+http://10.0.0.254:4022/rtp/225.1.0.214:1025
+#EXTINF:-1 tvg-id="377" tvg-name="家庭影院" group-title="体验频道",家庭影院
+http://10.0.0.254:4022/rtp/225.1.0.215:1025
+#EXTINF:-1 tvg-id="376" tvg-name="动作影院" group-title="体验频道",动作影院
+http://10.0.0.254:4022/rtp/225.1.0.216:1025
+#EXTINF:-1 tvg-id="375" tvg-name="喜剧影院" group-title="体验频道",喜剧影院
+http://10.0.0.254:4022/rtp/225.1.0.217:1025
+#EXTINF:-1 tvg-id="374" tvg-name="武侠剧场" group-title="体验频道",武侠剧场
+http://10.0.0.254:4022/rtp/225.1.0.218:1025
+#EXTINF:-1 tvg-id="373" tvg-name="足球" group-title="体验频道",足球
+http://10.0.0.254:4022/rtp/225.1.0.219:1025
+#EXTINF:-1 tvg-id="371" tvg-name="武术" group-title="体验频道",武术
+http://10.0.0.254:4022/rtp/225.1.0.220:1025
+#EXTINF:-1 tvg-id="370" tvg-name="爱生活" group-title="体验频道",爱生活
+http://10.0.0.254:4022/rtp/225.1.0.221:1025
+#EXTINF:-1 tvg-id="368" tvg-name="光影" group-title="体验频道",光影
+http://10.0.0.254:4022/rtp/225.1.0.222:1025
+#EXTINF:-1 tvg-id="366" tvg-name="鉴赏" group-title="体验频道",鉴赏
+http://10.0.0.254:4022/rtp/225.1.0.223:1025
+#EXTINF:-1 tvg-id="365" tvg-name="好学生" group-title="体验频道",好学生
+http://10.0.0.254:4022/rtp/225.1.0.224:1025
+#EXTINF:-1 tvg-id="364" tvg-name="动画" group-title="体验频道",动画
+http://10.0.0.254:4022/rtp/225.1.0.225:1025
+#EXTINF:-1 tvg-id="363" tvg-name="早教" group-title="体验频道",早教
+http://10.0.0.254:4022/rtp/225.1.0.226:1025
+#EXTINF:-1 tvg-id="362" tvg-name="戏曲" group-title="体验频道",戏曲
+http://10.0.0.254:4022/rtp/225.1.0.227:1025
+#EXTINF:-1 tvg-id="361" tvg-name="国学" group-title="体验频道",国学
+http://10.0.0.254:4022/rtp/225.1.0.228:1025
+#EXTINF:-1 tvg-id="360" tvg-name="军事" group-title="体验频道",军事
+http://10.0.0.254:4022/rtp/225.1.0.229:1025
+#EXTINF:-1 tvg-id="359" tvg-name="解密" group-title="体验频道",解密
+http://10.0.0.254:4022/rtp/225.1.0.230:1025
+#EXTINF:-1 tvg-id="358" tvg-name="精选" group-title="体验频道",精选
+http://10.0.0.254:4022/rtp/225.1.0.231:1025
+#EXTINF:-1 tvg-id="357" tvg-name="美人" group-title="体验频道",美人
+http://10.0.0.254:4022/rtp/225.1.0.232:1025
+#EXTINF:-1 tvg-id="356" tvg-name="美妆" group-title="体验频道",美妆
+http://10.0.0.254:4022/rtp/225.1.0.233:1025
+#EXTINF:-1 tvg-id="355" tvg-name="地理" group-title="体验频道",地理
+http://10.0.0.254:4022/rtp/225.1.0.234:1025
+#EXTINF:-1 tvg-id="354" tvg-name="音乐现场" group-title="体验频道",音乐现场
+http://10.0.0.254:4022/rtp/225.1.0.235:1025
+#EXTINF:-1 tvg-id="353" tvg-name="古装剧场" group-title="体验频道",古装剧场
+http://10.0.0.254:4022/rtp/225.1.0.236:1025
+#EXTINF:-1 tvg-id="352" tvg-name="军旅剧场" group-title="体验频道",军旅剧场
+http://10.0.0.254:4022/rtp/225.1.0.237:1025
+#EXTINF:-1 tvg-id="351" tvg-name="城市剧场" group-title="体验频道",城市剧场
+http://10.0.0.254:4022/rtp/225.1.0.238:1025
+#EXTINF:-1 tvg-id="174" tvg-name="CETV4" group-title="卫视频道",CETV4
+http://10.0.0.254:4022/rtp/225.1.0.239:1025
+#EXTINF:-1 tvg-id="173" tvg-name="CETV3" group-title="卫视频道",CETV3
+http://10.0.0.254:4022/rtp/225.1.0.240:1025
+#EXTINF:-1 tvg-id="172" tvg-name="CETV2" group-title="卫视频道",CETV2
+http://10.0.0.254:4022/rtp/225.1.0.241:1025
+#EXTINF:-1 tvg-id="76" tvg-name="CETV1高清" group-title="卫视频道",CETV1高清
+http://10.0.0.254:4022/rtp/225.1.0.242:1025
+#EXTINF:-1 tvg-id="77" tvg-name="金鹰纪实高清" group-title="卫视频道",金鹰纪实高清
+http://10.0.0.254:4022/rtp/225.1.0.243:1025
+#EXTINF:-1 tvg-id="139" tvg-name="山东教育" group-title="卫视频道",山东教育
+http://10.0.0.254:4022/rtp/225.1.0.246:1025
+#EXTINF:-1 tvg-id="301" tvg-name="房山电视台" group-title="体验频道",房山电视台
+http://10.0.0.254:4022/rtp/225.1.0.250:1025
+#EXTINF:-1 tvg-id="17" tvg-name="CCTV-17高清" group-title="央视频道",CCTV-17高清
+http://10.0.0.254:4022/rtp/225.1.0.95:8144
+#EXTINF:-1 tvg-id="15" tvg-name="CCTV-15高清" group-title="央视频道",CCTV-15高清
+http://10.0.0.254:4022/rtp/225.1.0.92:8136
+#EXTINF:-1 tvg-id="11" tvg-name="CCTV-11高清" group-title="央视频道",CCTV-11高清
+http://10.0.0.254:4022/rtp/225.1.0.85:8120
+#EXTINF:-1 tvg-id="117" tvg-name="CCTV-17" group-title="央视频道",CCTV-17
+http://10.0.0.254:4022/rtp/225.1.0.94:8064
+#EXTINF:-1 tvg-id="23" tvg-name="BTV科教高清" group-title="卫视频道",BTV科教高清
+http://10.0.0.254:4022/rtp/225.1.1.1:8000
+#EXTINF:-1 tvg-id="24" tvg-name="BTV影视高清" group-title="卫视频道",BTV影视高清
+http://10.0.0.254:4022/rtp/225.1.0.84:8000
+#EXTINF:-1 tvg-id="25" tvg-name="BTV财经高清" group-title="卫视频道",BTV财经高清
+http://10.0.0.254:4022/rtp/225.1.1.2:8000
+#EXTINF:-1 tvg-id="27" tvg-name="BTV生活高清" group-title="卫视频道",BTV生活高清
+http://10.0.0.254:4022/rtp/225.1.1.3:8000
+#EXTINF:-1 tvg-id="28" tvg-name="BTV青年高清" group-title="卫视频道",BTV青年高清
+http://10.0.0.254:4022/rtp/225.1.1.4:8000
+#EXTINF:-1 tvg-id="29" tvg-name="BTV新闻高清" group-title="卫视频道",BTV新闻高清
+http://10.0.0.254:4022/rtp/225.1.0.83:8000
+#EXTINF:-1 tvg-id="35" tvg-name="BTV卡酷少儿高清" group-title="卫视频道",BTV卡酷少儿高清
+http://10.0.0.254:4022/rtp/225.1.0.70:8000
+#EXTINF:-1 tvg-id="43" tvg-name="河北卫视高清" group-title="卫视频道",河北卫视高清
+http://10.0.0.254:4022/rtp/225.1.0.87:8072
+#EXTINF:-1 tvg-id="55" tvg-name="贵州卫视高清" group-title="卫视频道",贵州卫视高清
+http://10.0.0.254:4022/rtp/225.1.0.88:8076
+#EXTINF:-1 tvg-id="56" tvg-name="东南卫视高清" group-title="卫视频道",东南卫视高清
+http://10.0.0.254:4022/rtp/225.1.0.90:8148
+#EXTINF:-1 tvg-id="163" tvg-name="三沙卫视" group-title="卫视频道",三沙卫视
+http://10.0.0.254:4022/rtp/225.1.0.91:4120
+#EXTINF:-1 tvg-id="380" tvg-name="体育赛事高清" group-title="体验频道",体育赛事高清
+http://10.0.0.254:4022/rtp/225.1.0.89:8176
+#EXTINF:-1 tvg-id="402" tvg-name="中甲联赛" group-title="体验频道",中甲联赛
+http://10.0.0.254:4022/rtp/225.1.0.71:8184

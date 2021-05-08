@@ -9,18 +9,3 @@ wechat:
         secret: ixKGKSNmCJSeySiup841W0cnN7d2y1eQhUfTzUq900U
         token: aB6QyzJFzpRUV0ucJwB9Rvbj
         aesKey: 7AWWhalFltQBvCfj7AFBoGLiNabjteNePg3WHbWLkF3
-
-spring:
-  datasource:
-    url: jdbc:oracle:thin:@dbname_alias?TNS_ADMIN=/Users/test/wallet/wallet_dbname_alias
-    username: ADMIN
-    password:
-    driver-class-name: oracle.jdbc.OracleDriver
-    type: oracle.ucp.jdbc.UCPDataSource
-    ucp:
-      connection-factory-class-name: oracle.jdbc.replay.OracleDataSourceImpl
-      sql-for-validate-connection: select * from dual
-      connection-pool-name: connectionPoolName1
-      initial-pool-size: 15
-      ucp.min-pool-size: 10
-      ucp.max-pool-size: 30
