@@ -22,14 +22,12 @@ class AllinoneApplicationTests {
         public String url;
     }
 
-
     @Test
     void contextLoads() throws IOException {
         HashMap<Integer, Iptv> end = new HashMap<>();
         Pattern r = Pattern.compile("(\\d+)");
 
         List<String> list = FileUtils.readLines(new ClassPathResource("/other/all(内网).m3u").getFile(), Charset.forName("utf-8"));
-//        System.out.println(list.size());
         for (int i = 1; i < list.size(); i += 2) {
             String str = list.get(i);
             Matcher m = r.matcher(str.replace("-1", ""));
