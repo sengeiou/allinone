@@ -115,12 +115,14 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
                                     int scaleH) {
         DateTime dateTime = new DateTime(DateUtils.getNowDate());
 
-        String descPath01 = "/usr/share/nginx/html/img/";
+        String wRoot = "/www/wwwroot/img.dwx.wiki";
+
+        String descPath01 = wRoot + "/img/";
         String descPath02 = dateTime.getYear() + "-" + dateTime.getMonthOfYear() + "-" + dateTime.getDayOfMonth();
         String descPath03 = "/" + location + "-" + dateTime.getMillisOfDay() + ".png";
 
-        List<String> fileList = cn.hutool.core.io.FileUtil.listFileNames("/usr/share/nginx/html/img/bkimg/");
-        String path = "/usr/share/nginx/html/img/bkimg/" + fileList.get(RandomUtil.randomInt(0, fileList.size()));
+        List<String> fileList = cn.hutool.core.io.FileUtil.listFileNames(wRoot + "/bkimg/");
+        String path = wRoot + "/bkimg/" + fileList.get(RandomUtil.randomInt(0, fileList.size()));
 
         String fontName = "WenQuanYi Micro Hei";
 
@@ -181,7 +183,7 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
             int xOffset = 20;
             int yOffset = 20;
 
-            String iconPathBase = "/usr/share/nginx/html/img/WeatherIcon/weather-icon-S2/";
+            String iconPathBase = wRoot + "/WeatherIcon/weather-icon-S2/";
             String iconPath = iconPathBase + "128/" + icon + ".png";
             img.pressImage(Img.from(FileUtil.file(iconPath)).getImg(), xOffset, yOffset + h / 3 - 64, 1.0f);
 
@@ -259,6 +261,6 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
         } catch (Exception e) {
             log.error("index", e);
         }
-        return "https://img.dwx.ink/" + descPath02 + descPath03;
+        return "https://img.dwx.wiki/" + descPath02 + descPath03;
     }
 }
