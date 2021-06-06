@@ -75,6 +75,7 @@ public class ScheduleTask {
                     .toUser("chloed|davidlu")
                     .addArticle(article)
                     .build();
+            log.info(res.get("msg").toString());
             WxCpMessageSendResult result = wxCpService.getMessageService().send(message);
             log.info(result.toString());
         } catch (Exception e) {
@@ -90,6 +91,7 @@ public class ScheduleTask {
                     .toUser("chloed|davidlu")
                     .addArticle(article)
                     .build();
+            log.info(res.get("msg").toString());
             WxCpMessageSendResult result = wxCpService.getMessageService().send(message);
             log.info(result.toString());
         }
