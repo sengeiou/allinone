@@ -19,7 +19,7 @@ public class ScheduleTask {
     @Resource
     private WeatherSMSService weatherSMSService;
 
-//    @Scheduled(cron = "0 0 0/1 * * ? ")
+    @Scheduled(cron = "0 0 7,9,11,13,15,17,19,21 * * ?")
     public void doTasks() throws WxErrorException {
         final WxCpService wxCpService = WxCpConfig.getCpService(1000002);
 
