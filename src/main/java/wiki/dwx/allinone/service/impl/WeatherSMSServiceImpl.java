@@ -117,7 +117,7 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
 
         String wRoot = "/www/wwwroot/img.dwx.wiki";
 
-        String descPath01 = wRoot + "/img/";
+        String descPath01 = wRoot + "/";
         String descPath02 = dateTime.getYear() + "-" + dateTime.getMonthOfYear() + "-" + dateTime.getDayOfMonth();
         String descPath03 = "/" + location + "-" + dateTime.getMillisOfDay() + ".png";
 
