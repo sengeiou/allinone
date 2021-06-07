@@ -6,10 +6,12 @@ import me.chanjar.weixin.cp.api.WxCpService;
 import me.chanjar.weixin.cp.bean.article.NewArticle;
 import me.chanjar.weixin.cp.bean.message.WxCpMessage;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import wiki.dwx.allinone.config.WxCpConfig;
 import wiki.dwx.allinone.service.WeatherSMSService;
+import wiki.dwx.allinone.utils.DateUtils;
 
 import javax.annotation.Resource;
 import java.util.Map;
@@ -22,7 +24,8 @@ public class IndexController {
     private WeatherSMSService weatherSMSService;
 
     @GetMapping(value = {"", "/"})
-    public String index() {
+    public String index(Model model) {
+        model.addAttribute("time", DateUtils.toTimeString(DateUtils.getNowDate()));
         return "index";
     }
 
