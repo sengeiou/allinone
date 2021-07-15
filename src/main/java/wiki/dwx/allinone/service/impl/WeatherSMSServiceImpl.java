@@ -118,8 +118,8 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
                                     int scaleH) {
         DateTime dateTime = new DateTime(DateUtils.getNowDate());
 
-//        String wRoot = "/www/wwwroot/img.dwx.wiki";
-        String wRoot = "/Users/wenxuan.ding/fsdownload";
+        String wRoot = "/www/wwwroot/img.dwx.wiki";
+//        String wRoot = "/Users/wenxuan.ding/fsdownload";
 
         String descPath01 = wRoot + "/";
         String descPath02 = dateTime.getYear() + "-" + dateTime.getMonthOfYear() + "-" + dateTime.getDayOfMonth();
@@ -128,8 +128,8 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
         List<String> fileList = cn.hutool.core.io.FileUtil.listFileNames(wRoot + "/bkimg/");
         String path = wRoot + "/bkimg/" + fileList.get(RandomUtil.randomInt(0, fileList.size()));
 
-//        String fontName = "WenQuanYi Micro Hei";
-        String fontName = "Arial";
+        String fontName = "WenQuanYi Micro Hei";
+//        String fontName = "Arial";
 
         Gson gson = new GsonBuilder().create();
 
