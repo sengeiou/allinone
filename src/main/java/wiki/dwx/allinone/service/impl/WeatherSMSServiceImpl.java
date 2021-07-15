@@ -116,6 +116,7 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
         DateTime dateTime = new DateTime(DateUtils.getNowDate());
 
         String wRoot = "/www/wwwroot/img.dwx.wiki";
+//        String wRoot = "/Users/wenxuan.ding/fsdownload";
 
         String descPath01 = wRoot + "/";
         String descPath02 = dateTime.getYear() + "-" + dateTime.getMonthOfYear() + "-" + dateTime.getDayOfMonth();
@@ -125,13 +126,14 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
         String path = wRoot + "/bkimg/" + fileList.get(RandomUtil.randomInt(0, fileList.size()));
 
         String fontName = "WenQuanYi Micro Hei";
+//        String fontName = "Arial";
 
         Gson gson = new GsonBuilder().create();
 
         List<String> listd = new ArrayList<>();
         JsonObject typeObj = null;
         try {
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 7; i++) {
                 Date newDate = DateUtil.offset(DateUtils.getNowDate(), DateField.DAY_OF_MONTH, i);
                 String d = DateUtil.format(newDate, "yyyy-MM-dd");
                 listd.add(d);
@@ -146,7 +148,13 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
         try {
             BufferedImage bufferedImage = ImageIO.read(FileUtil.file(path));
             BufferedImage bkImg = ImgUtil.copyImage(bufferedImage, BufferedImage.TYPE_INT_RGB);
-            FileUtil.mkdir(descPath01 + descPath02);
+
+            // 读出文件 修改图片尺寸
+            Img img = Img.from(bkImg);
+            img.setPositionBaseCentre(false);
+            if (scaleW > 0 && scaleH > 0) {
+                img.scale(scaleW, scaleH);
+            }
 
             JsonObject cityLookupObj = gson.fromJson(JsonUtils.toString(cityLookup), JsonObject.class);
             JsonObject locationObj = cityLookupObj.getAsJsonArray("location").get(0).getAsJsonObject();
@@ -154,27 +162,14 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
             String pressText = locationObj.get("adm2").getAsString() + locationObj.get("name").getAsString();
             pressText += +dateTime.getMonthOfYear() + "月" + dateTime.getDayOfMonth() + "日星期" + DateUtils.getDayOfWeek(dateTime.getDayOfWeek());
             Font smallFont = new Font(fontName, Font.PLAIN, 24);
-            int h = bkImg.getHeight();
-            int x0 = (bkImg.getWidth() - 40) / -2 + smallFont.getSize() * pressText.length() / 2 - 20;
-            int y0 = (bkImg.getHeight() - 40) / -2 + smallFont.getSize();
+
             Color color = Color.WHITE;
             if (typeObj != null) {
                 color = DateUtils.getDayOfColor(typeObj.get(listd.get(0)).getAsJsonObject().get("type").getAsInt());
             }
-            ImgUtil.pressText(Img.from(bkImg).round(0.1f).getImg(),
-                    FileUtil.file(descPath01 + descPath02 + descPath03),
-                    pressText,
-                    color, smallFont, x0, y0, 1.0f);
-            Rectangle2D smallFontRect = smallFont.getStringBounds(pressText, ((Graphics2D) bkImg.getGraphics()).getFontRenderContext());
+            img.pressText(pressText, color, smallFont, 20, 30, 1.0f);
 
-            Img img = Img.from(FileUtil.file(descPath01 + descPath02 + descPath03));
-            img.setPositionBaseCentre(false);
-
-            if (scaleW > 0 && scaleH > 0) {
-                img.scale(750, 320);
-            }
-
-            img.pressText("by 睡神", Color.WHITE, smallFont, bkImg.getWidth() - 85, 25, 1.0f);
+            img.pressText("by 睡神", Color.WHITE, smallFont, scaleW - 90, 30, 1.0f);
 
             JsonObject weatherNowObj = gson.fromJson(JsonUtils.toString(weatherNow), JsonObject.class);
             JsonObject now = weatherNowObj.getAsJsonObject("now");
@@ -184,13 +179,13 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
             int yOffset = 20;
 
             String iconPathBase = wRoot + "/WeatherIcon/weather-icon-S2/";
-            String iconPath = iconPathBase + "128/" + icon + ".png";
-            img.pressImage(Img.from(FileUtil.file(iconPath)).getImg(), xOffset, yOffset + h / 3 - 64, 1.0f);
+            String iconPath = iconPathBase + "256/" + icon + ".png";
+            img.pressImage(Img.from(FileUtil.file(iconPath)).getImg(), xOffset, yOffset + scaleH / 3 - 128, 1.0f);
 
             String temp = now.get("temp").getAsString() + "°";
             Font tempFont = new Font(fontName, Font.PLAIN, 110);
-            int tempX = xOffset + 128;
-            int tempY = yOffset / 2 + h / 2 - 10;
+            int tempX = xOffset + 226;
+            int tempY = yOffset / 2 + scaleH / 2 - 20;
             img.pressText(temp, Color.WHITE, tempFont, tempX, tempY, 1.0f);
 
             Rectangle2D tempFontRect = tempFont.getStringBounds(temp, ((Graphics2D) img.getImg().getGraphics()).getFontRenderContext());
@@ -230,12 +225,15 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
 
             String sunset = daily.get("sunset").getAsString();    // 17:31
             int sunsetI = Integer.parseInt(sunset.split(":")[0]);
-            int dailyX = 20;
-            int dailyY = bufferedImage.getHeight() - 64 - 20;
-            for (int i = 0; i < 4; i++) {
+            int dailyX = 10;
+            int dailyY = scaleH - 80;
+            for (int i = 0; i < 6; i++) {
                 daily = dailys.get(i + 1).getAsJsonObject();
 
                 int offset = i * 180;
+                if (offset > 0) {
+                    offset = offset - 10;
+                }
                 iconPath = iconPathBase + "64/" + daily.get("iconDay").getAsString() + ".png";
                 if (dateTime.getHourOfDay() > sunsetI || dateTime.getHourOfDay() <= sunriseI) {
                     iconPath = iconPathBase + "64/" + daily.get("iconNight").getAsString() + ".png";
@@ -252,12 +250,11 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
                     img.pressText(day, Color.WHITE, smallFont, dailyX + 64 + offset, dailyY + 15, 1.0f);
                 }
                 temp = daily.get("tempMax").getAsString() + "/" + daily.get("tempMin").getAsString() + "°";
-                img.pressText(temp, Color.WHITE, smallFont, dailyX + 64 + offset, dailyY + 15 + (int) smallFontRect.getHeight(), 1.0f);
+                img.pressText(temp, Color.WHITE, smallFont, dailyX + 64 + offset, dailyY + 50, 1.0f);
             }
-            if (scaleW > 0 && scaleH > 0) {
-                img.scale(scaleW, scaleH);
-            }
-            img.write(FileUtil.file(descPath01 + descPath02 + descPath03));
+
+            FileUtil.mkdir(descPath01 + descPath02);
+            img.round(0.1f).write(FileUtil.file(descPath01 + descPath02 + descPath03));
         } catch (Exception e) {
             log.error("index", e);
         }
