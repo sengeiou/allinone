@@ -3,7 +3,6 @@ package wiki.dwx.allinone.service.impl;
 import cn.hutool.core.date.DateField;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.img.Img;
-import cn.hutool.core.img.ImgUtil;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.RandomUtil;
 import com.google.gson.Gson;
@@ -11,7 +10,10 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import wiki.dwx.allinone.service.QweatherService;
 import wiki.dwx.allinone.service.TimorHolidayService;
@@ -20,12 +22,11 @@ import wiki.dwx.allinone.utils.DateUtils;
 import wiki.dwx.allinone.utils.JsonUtils;
 
 import javax.annotation.Resource;
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
-import java.awt.image.BufferedImage;
-import java.util.*;
 import java.util.List;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @Service
@@ -35,6 +36,8 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
     private QweatherService qweatherService;
     @Resource
     private TimorHolidayService timorHolidayService;
+    @Autowired
+    private StringRedisTemplate redisTemplate;
 
     @Override
     public Map getWeather4Wc(String location) {
@@ -115,8 +118,8 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
                                     int scaleH) {
         DateTime dateTime = new DateTime(DateUtils.getNowDate());
 
-        String wRoot = "/www/wwwroot/img.dwx.wiki";
-//        String wRoot = "/Users/wenxuan.ding/fsdownload";
+//        String wRoot = "/www/wwwroot/img.dwx.wiki";
+        String wRoot = "/Users/wenxuan.ding/fsdownload";
 
         String descPath01 = wRoot + "/";
         String descPath02 = dateTime.getYear() + "-" + dateTime.getMonthOfYear() + "-" + dateTime.getDayOfMonth();
@@ -125,8 +128,8 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
         List<String> fileList = cn.hutool.core.io.FileUtil.listFileNames(wRoot + "/bkimg/");
         String path = wRoot + "/bkimg/" + fileList.get(RandomUtil.randomInt(0, fileList.size()));
 
-        String fontName = "WenQuanYi Micro Hei";
-//        String fontName = "Arial";
+//        String fontName = "WenQuanYi Micro Hei";
+        String fontName = "Arial";
 
         Gson gson = new GsonBuilder().create();
 
@@ -138,19 +141,26 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
                 String d = DateUtil.format(newDate, "yyyy-MM-dd");
                 listd.add(d);
             }
-            Map holidayBatch = timorHolidayService.getHolidayBatch(listd);
-            JsonObject holidayBatchObj = gson.fromJson(JsonUtils.toString(holidayBatch), JsonObject.class);
-            typeObj = holidayBatchObj.get("type").getAsJsonObject();
+
+            String redisKey = DateUtil.format(DateUtils.getNowDate(), "yyyy-MM-dd");
+            String redisValue = redisTemplate.opsForValue().get(redisKey);
+            if (StringUtils.isNoneBlank(redisValue)) {
+                typeObj = gson.fromJson(redisValue, JsonObject.class);
+                log.info("命中缓存:" + redisKey + ":" + redisValue);
+            } else {
+                Map holidayBatch = timorHolidayService.getHolidayBatch(listd);
+                JsonObject holidayBatchObj = gson.fromJson(JsonUtils.toString(holidayBatch), JsonObject.class);
+                typeObj = holidayBatchObj.get("type").getAsJsonObject();
+                redisTemplate.opsForValue().set(redisKey, JsonUtils.toString(typeObj), 25, TimeUnit.HOURS);
+                log.info("保存到缓存:" + redisKey);
+            }
         } catch (Exception e) {
             log.error("getHolidayBatch:" + location, e);
         }
 
         try {
-            BufferedImage bufferedImage = ImageIO.read(FileUtil.file(path));
-            BufferedImage bkImg = ImgUtil.copyImage(bufferedImage, BufferedImage.TYPE_INT_RGB);
-
             // 读出文件 修改图片尺寸
-            Img img = Img.from(bkImg);
+            Img img = Img.from(FileUtil.file(path));
             img.setPositionBaseCentre(false);
             if (scaleW > 0 && scaleH > 0) {
                 img.scale(scaleW, scaleH);

@@ -9,3 +9,8 @@ wechat:
         secret: ixKGKSNmCJSeySiup841W0cnN7d2y1eQhUfTzUq900U
         token: aB6QyzJFzpRUV0ucJwB9Rvbj
         aesKey: 7AWWhalFltQBvCfj7AFBoGLiNabjteNePg3WHbWLkF3
+
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
