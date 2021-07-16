@@ -166,12 +166,14 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
                 img.scale(scaleW, scaleH);
             }
 
+            float scaleFont = 1.2f;
+
             JsonObject cityLookupObj = gson.fromJson(JsonUtils.toString(cityLookup), JsonObject.class);
             JsonObject locationObj = cityLookupObj.getAsJsonArray("location").get(0).getAsJsonObject();
 
             String pressText = locationObj.get("adm2").getAsString() + locationObj.get("name").getAsString();
             pressText += +dateTime.getMonthOfYear() + "月" + dateTime.getDayOfMonth() + "日星期" + DateUtils.getDayOfWeek(dateTime.getDayOfWeek());
-            Font smallFont = new Font(fontName, Font.PLAIN, 24);
+            Font smallFont = new Font(fontName, Font.PLAIN, (int) (24 * scaleFont));
 
             Color color = Color.WHITE;
             if (typeObj != null) {
@@ -179,7 +181,7 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
             }
             img.pressText(pressText, color, smallFont, 20, 30, 1.0f);
 
-            img.pressText("by 睡神", Color.WHITE, smallFont, scaleW - 90, 30, 1.0f);
+            img.pressText("by 睡神", Color.WHITE, smallFont, scaleW - 105, 30, 1.0f);
 
             JsonObject weatherNowObj = gson.fromJson(JsonUtils.toString(weatherNow), JsonObject.class);
             JsonObject now = weatherNowObj.getAsJsonObject("now");
@@ -193,7 +195,7 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
             img.pressImage(Img.from(FileUtil.file(iconPath)).getImg(), xOffset, yOffset + scaleH / 3 - 128, 1.0f);
 
             String temp = now.get("temp").getAsString() + "°";
-            Font tempFont = new Font(fontName, Font.PLAIN, 110);
+            Font tempFont = new Font(fontName, Font.PLAIN, (int) (110 * scaleFont));
             int tempX = xOffset + 226;
             int tempY = yOffset / 2 + scaleH / 2 - 20;
             img.pressText(temp, Color.WHITE, tempFont, tempX, tempY, 1.0f);
@@ -211,7 +213,7 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
                 text += " " + warning.get("typeName").getAsString() + warning.get("level").getAsString() + "预警";
             }
 
-            Font font = new Font(fontName, Font.BOLD, 32);
+            Font font = new Font(fontName, Font.BOLD, (int) (32 * scaleFont));
             img.pressText(text, Color.WHITE, font, textX, textY, 1.0f);
 
             JsonObject weather7dObj = gson.fromJson(JsonUtils.toString(weather7d), JsonObject.class);
@@ -240,9 +242,9 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
             for (int i = 0; i < 6; i++) {
                 daily = dailys.get(i + 1).getAsJsonObject();
 
-                int offset = i * 180;
+                int offset = i * 178;
                 if (offset > 0) {
-                    offset = offset - 10;
+                    offset = offset - 15;
                 }
                 iconPath = iconPathBase + "64/" + daily.get("iconDay").getAsString() + ".png";
                 if (dateTime.getHourOfDay() > sunsetI || dateTime.getHourOfDay() <= sunriseI) {
