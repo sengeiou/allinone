@@ -5,6 +5,8 @@ import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.cp.api.WxCpService;
 import me.chanjar.weixin.cp.bean.article.NewArticle;
 import me.chanjar.weixin.cp.bean.message.WxCpMessage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,10 +24,13 @@ public class IndexController {
 
     @Resource
     private WeatherSMSService weatherSMSService;
+    @Autowired
+    private StringRedisTemplate redisTemplate;
 
     @GetMapping(value = {"", "/"})
     public String index(Model model) {
         model.addAttribute("time", DateUtils.toTimeString(DateUtils.getNowDate()));
+        model.addAttribute("bj_img", redisTemplate.opsForValue().get("bj_img"));
         return "index";
     }
 

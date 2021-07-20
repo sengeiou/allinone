@@ -6,6 +6,8 @@ import me.chanjar.weixin.cp.api.WxCpService;
 import me.chanjar.weixin.cp.bean.article.NewArticle;
 import me.chanjar.weixin.cp.bean.message.WxCpMessage;
 import me.chanjar.weixin.cp.bean.message.WxCpMessageSendResult;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import wiki.dwx.allinone.config.WxCpConfig;
@@ -20,6 +22,8 @@ import java.util.Map;
 public class ScheduleTask {
     @Resource
     private WeatherSMSService weatherSMSService;
+    @Autowired
+    private StringRedisTemplate redisTemplate;
 
     @Scheduled(cron = "0 0 7,9,11,13,15,17,19,21 * * ? ")
     public void doTasks() throws WxErrorException {
@@ -27,6 +31,9 @@ public class ScheduleTask {
         log.info("定时任务时间: " + DateUtils.toTimeString(DateUtils.getNowDate()));
         try {
             Map res = weatherSMSService.getWeather4Wc("101010300");
+
+            redisTemplate.opsForValue().set("bj_img", res.get("img").toString());
+
             NewArticle article = NewArticle.builder()
                     .title(res.get("title").toString())
                     .description(res.get("msg").toString())
