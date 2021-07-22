@@ -204,14 +204,14 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
 
             String text = now.get("text").getAsString();
             int textX = (int) (tempX + tempFontRect.getWidth());
-            int textY = (int) (tempY - tempFontRect.getHeight() / 2) + 10;
+            int textY = (int) (tempY - tempFontRect.getHeight() / 2) + 15;
             Font font = new Font(fontName, Font.BOLD, (int) (36 * scaleFont));
             img.pressText(text, Color.WHITE, font, textX, textY, 1.0f);
             Rectangle2D fontRect = font.getStringBounds(text, ((Graphics2D) img.getImg().getGraphics()).getFontRenderContext());
 
             JsonObject warningNowObj = gson.fromJson(JsonUtils.toString(warningNow), JsonObject.class);
             JsonArray warnings = warningNowObj.getAsJsonArray("warning");
-            int warOffx = (int) fontRect.getWidth() + 20;
+            int warOffx = (int) fontRect.getWidth() + 40;
             for (int i = 0; i < warnings.size(); i++) {
                 JsonObject warning = warnings.get(i).getAsJsonObject();
 //                text += " " + warning.get("typeName").getAsString() + warning.get("level").getAsString() + "预警";
