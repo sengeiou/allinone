@@ -216,7 +216,7 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
                 JsonObject warning = warnings.get(i).getAsJsonObject();
 //                text += " " + warning.get("typeName").getAsString() + warning.get("level").getAsString() + "预警";
 
-                String war = warning.get("typeName").getAsString() + "预警";
+                String war = warning.get("typeName").getAsString();
                 img.pressText(war, DateUtils.getWarColor(warning.get("level").getAsString()), font, textX + warOffx, textY, 1.0f);
                 Rectangle2D warRect = font.getStringBounds(war, ((Graphics2D) img.getImg().getGraphics()).getFontRenderContext());
                 warOffx += warRect.getWidth() + 10;

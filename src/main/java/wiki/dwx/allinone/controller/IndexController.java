@@ -56,6 +56,7 @@ public class IndexController {
         } catch (WxErrorException e) {
             log.error("send:", e);
         }
+        redisTemplate.opsForValue().set("bj_img", res.get("img").toString());
         return res.get("img").toString();
     }
 }
