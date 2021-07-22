@@ -205,13 +205,13 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
             String text = now.get("text").getAsString();
             int textX = (int) (tempX + tempFontRect.getWidth());
             int textY = (int) (tempY - tempFontRect.getHeight() / 2) + 10;
-            Font font = new Font(fontName, Font.BOLD, (int) (32 * scaleFont));
+            Font font = new Font(fontName, Font.BOLD, (int) (36 * scaleFont));
             img.pressText(text, Color.WHITE, font, textX, textY, 1.0f);
-            Rectangle2D fontRect = font.getStringBounds(temp, ((Graphics2D) img.getImg().getGraphics()).getFontRenderContext());
+            Rectangle2D fontRect = font.getStringBounds(text, ((Graphics2D) img.getImg().getGraphics()).getFontRenderContext());
 
             JsonObject warningNowObj = gson.fromJson(JsonUtils.toString(warningNow), JsonObject.class);
             JsonArray warnings = warningNowObj.getAsJsonArray("warning");
-            int warOffx = (int) fontRect.getWidth() + 10;
+            int warOffx = (int) fontRect.getWidth() + 20;
             for (int i = 0; i < warnings.size(); i++) {
                 JsonObject warning = warnings.get(i).getAsJsonObject();
 //                text += " " + warning.get("typeName").getAsString() + warning.get("level").getAsString() + "预警";
@@ -219,7 +219,7 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
                 String war = warning.get("typeName").getAsString();
                 img.pressText(war, DateUtils.getWarColor(warning.get("level").getAsString()), font, textX + warOffx, textY, 1.0f);
                 Rectangle2D warRect = font.getStringBounds(war, ((Graphics2D) img.getImg().getGraphics()).getFontRenderContext());
-                warOffx += warRect.getWidth() + 10;
+                warOffx += warRect.getWidth() + 20;
             }
 
             JsonObject weather7dObj = gson.fromJson(JsonUtils.toString(weather7d), JsonObject.class);
