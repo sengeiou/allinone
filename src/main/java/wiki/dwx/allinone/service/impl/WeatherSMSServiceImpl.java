@@ -233,7 +233,7 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
 
             tempMaxtempMin += " " + airNowObj.get("category").getAsString();
 
-            img.pressText(tempMaxtempMin, Color.WHITE, font, textX, textY + (int) fontRect.getHeight() + 20, 1.0f);
+            img.pressText(tempMaxtempMin, Color.WHITE, font, textX, textY + (int) fontRect.getHeight() + 15, 1.0f);
 
             // iconDay 时间 tempMax tempMin
             String sunrise = daily.get("sunrise").getAsString();  // 07:23
