@@ -44,7 +44,7 @@ class AllinoneApplicationTests {
         int m = time % 3600 / 60;
         int s = time % 3600 % 60;
 
-        String t = String.format("%s %02d:%02d:%02d", day, m, h, s);
+        String t = String.format("%s %02d:%02d:%02d", day, h, m, s);
 
         Font font = new Font("Arial", Font.PLAIN, 36);
         BufferedImage img = ImgUtil.createImage("大风预警", font, Color.blue, Color.white, 1);

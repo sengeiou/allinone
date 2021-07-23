@@ -45,7 +45,7 @@ public class IndexController {
         int m = time % 3600 / 60;
         int s = time % 3600 % 60;
 
-        model.addAttribute("img_time", String.format("%s %02d:%02d:%02d", day, m, h, s));
+        model.addAttribute("img_time", String.format("%s %02d:%02d:%02d", day, h, m, s));
 
         return "index";
     }
