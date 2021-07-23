@@ -1,13 +1,11 @@
 package wiki.dwx.allinone.controller;
 
-import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
 import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.cp.api.WxCpService;
 import me.chanjar.weixin.cp.bean.article.NewArticle;
 import me.chanjar.weixin.cp.bean.message.WxCpMessage;
-import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
@@ -19,7 +17,6 @@ import wiki.dwx.allinone.service.WeatherSMSService;
 import wiki.dwx.allinone.utils.DateUtils;
 
 import javax.annotation.Resource;
-import java.util.Date;
 import java.util.Map;
 
 @Slf4j
@@ -38,6 +35,8 @@ public class IndexController {
 
         String str = redisTemplate.opsForValue().get("bj_img");
         String[] strs = str.split("/");
+        String day = strs[strs.length - 2];
+
         str = StrUtil.removeSuffix(strs[strs.length - 1], ".png");
         strs = str.split("-");
         str = strs[strs.length - 1];
@@ -46,9 +45,7 @@ public class IndexController {
         int m = time % 3600 / 60;
         int s = time % 3600 % 60;
 
-        Date now = DateUtils.getNowDate();
-        DateTime d = new DateTime(DateUtil.year(now), DateUtil.month(now) + 1, DateUtil.dayOfMonth(now), h, m, s);
-        model.addAttribute("img_time", DateUtils.toTimeString(d.toDate()));
+        model.addAttribute("img_time", String.format("%s %02d:%02d:%02d", day, m, h, s));
 
         return "index";
     }

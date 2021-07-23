@@ -33,17 +33,18 @@ class AllinoneApplicationTests {
     public void img() {
         String str = "https://img.dwx.wiki/2021-7-23/101010300-36889033.png";
         String[] strs = str.split("/");
+        String day = strs[strs.length - 2];
+
         str = StrUtil.removeSuffix(strs[strs.length - 1], ".png");
         strs = str.split("-");
         str = strs[strs.length - 1];
+
         int time = Integer.valueOf(str) / 1000;
         int h = time / 3600;
         int m = time % 3600 / 60;
         int s = time % 3600 % 60;
 
-        Date now = DateUtils.getNowDate();
-        DateTime d = new DateTime(DateUtil.year(now), DateUtil.month(now) + 1, DateUtil.dayOfMonth(now), h, m, s);
-        String t = DateUtils.toTimeString(d.toDate());
+        String t = String.format("%s %02d:%02d:%02d", day, m, h, s);
 
         Font font = new Font("Arial", Font.PLAIN, 36);
         BufferedImage img = ImgUtil.createImage("大风预警", font, Color.blue, Color.white, 1);
