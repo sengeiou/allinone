@@ -1,10 +1,13 @@
 package wiki.dwx.allinone.controller;
 
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.util.StrUtil;
 import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.cp.api.WxCpService;
 import me.chanjar.weixin.cp.bean.article.NewArticle;
 import me.chanjar.weixin.cp.bean.message.WxCpMessage;
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
@@ -16,6 +19,7 @@ import wiki.dwx.allinone.service.WeatherSMSService;
 import wiki.dwx.allinone.utils.DateUtils;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.Map;
 
 @Slf4j
@@ -31,6 +35,21 @@ public class IndexController {
     public String index(Model model) {
         model.addAttribute("time", DateUtils.toTimeString(DateUtils.getNowDate()));
         model.addAttribute("bj_img", redisTemplate.opsForValue().get("bj_img"));
+
+        String str = redisTemplate.opsForValue().get("bj_img");
+        String[] strs = str.split("/");
+        str = StrUtil.removeSuffix(strs[strs.length - 1], ".png");
+        strs = str.split("-");
+        str = strs[strs.length - 1];
+        int time = Integer.valueOf(str) / 1000;
+        int h = time / 3600;
+        int m = time % 3600 / 60;
+        int s = time % 3600 % 60;
+
+        Date now = DateUtils.getNowDate();
+        DateTime d = new DateTime(DateUtil.year(now), DateUtil.month(now) + 1, DateUtil.dayOfMonth(now), h, m, s);
+        model.addAttribute("img_time", DateUtils.toTimeString(d.toDate()));
+
         return "index";
     }
 

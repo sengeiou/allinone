@@ -1,26 +1,57 @@
 package wiki.dwx.allinone;
 
+import cn.hutool.core.date.DateField;
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.img.Img;
+import cn.hutool.core.img.ImgUtil;
+import cn.hutool.core.util.StrUtil;
 import cn.hutool.core.util.XmlUtil;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.joda.time.DateTime;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import wiki.dwx.allinone.utils.DateUtils;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
+import java.util.*;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @SpringBootTest
 class AllinoneApplicationTests {
+
+    @Test
+    public void img() {
+        String str = "https://img.dwx.wiki/2021-7-23/101010300-36889033.png";
+        String[] strs = str.split("/");
+        str = StrUtil.removeSuffix(strs[strs.length - 1], ".png");
+        strs = str.split("-");
+        str = strs[strs.length - 1];
+        int time = Integer.valueOf(str) / 1000;
+        int h = time / 3600;
+        int m = time % 3600 / 60;
+        int s = time % 3600 % 60;
+
+        Date now = DateUtils.getNowDate();
+        DateTime d = new DateTime(DateUtil.year(now), DateUtil.month(now) + 1, DateUtil.dayOfMonth(now), h, m, s);
+        String t = DateUtils.toTimeString(d.toDate());
+
+        Font font = new Font("Arial", Font.PLAIN, 36);
+        BufferedImage img = ImgUtil.createImage("大风预警", font, Color.blue, Color.white, 1);
+        System.out.println(img.getWidth() + " " + img.getHeight());
+        Image descImg = ImgUtil.pressImage(ImgUtil.read("/Users/wenxuan.ding/Desktop/20210201.png"),
+                Img.from(img).round(0.8f).getImg(), 0, 0, 1);
+        ImgUtil.write(descImg, FileUtils.getFile("/Users/wenxuan.ding/Desktop/desc.png"));
+    }
 
     class Iptv {
         public Integer chno;
