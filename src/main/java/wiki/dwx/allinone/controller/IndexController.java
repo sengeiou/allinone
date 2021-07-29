@@ -47,6 +47,8 @@ public class IndexController {
 
         model.addAttribute("img_time", String.format("%s %02d:%02d:%02d", day, h, m, s));
 
+        model.addAttribute("ah_img", redisTemplate.opsForValue().get("ah_img"));
+
         return "index";
     }
 

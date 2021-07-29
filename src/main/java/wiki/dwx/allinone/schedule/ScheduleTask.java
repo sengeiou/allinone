@@ -31,7 +31,6 @@ public class ScheduleTask {
         log.info("定时任务时间: " + DateUtils.toTimeString(DateUtils.getNowDate()));
         try {
             Map res = weatherSMSService.getWeather4Wc("101010300");
-
             redisTemplate.opsForValue().set("bj_img", res.get("img").toString());
 
             NewArticle article = NewArticle.builder()
@@ -49,6 +48,8 @@ public class ScheduleTask {
             log.info(result.toString());
         } catch (Exception e) {
             Map res = weatherSMSService.getWeather4Wc("101010300");
+            redisTemplate.opsForValue().set("bj_img", res.get("img").toString());
+
             NewArticle article = NewArticle.builder()
                     .title(res.get("title").toString())
                     .description(res.get("msg").toString())
@@ -71,6 +72,8 @@ public class ScheduleTask {
         final WxCpService wxCpService = WxCpConfig.getCpService(1000002);
         try {
             Map res = weatherSMSService.getWeather4Wc("101220110");
+            redisTemplate.opsForValue().set("ah_img", res.get("img").toString());
+
             NewArticle article = NewArticle.builder()
                     .title(res.get("title").toString())
                     .description(res.get("msg").toString())
@@ -87,6 +90,8 @@ public class ScheduleTask {
             log.info(result.toString());
         } catch (Exception e) {
             Map res = weatherSMSService.getWeather4Wc("101220110");
+            redisTemplate.opsForValue().set("ah_img", res.get("img").toString());
+
             NewArticle article = NewArticle.builder()
                     .title(res.get("title").toString())
                     .description(res.get("msg").toString())
