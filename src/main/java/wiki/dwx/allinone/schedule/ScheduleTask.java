@@ -25,7 +25,7 @@ public class ScheduleTask {
     @Autowired
     private StringRedisTemplate redisTemplate;
 
-    @Scheduled(cron = "0 0 7,9,11,13,15,17,19,21 * * ? ")
+    @Scheduled(cron = "0 0 7,9,11,13,15,17,19,21,23 * * ? ")
     public void doTasks() throws WxErrorException {
         final WxCpService wxCpService = WxCpConfig.getCpService(1000002);
         log.info("定时任务时间: " + DateUtils.toTimeString(DateUtils.getNowDate()));

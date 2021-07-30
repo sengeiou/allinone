@@ -1,5 +1,6 @@
 package wiki.dwx.allinone.utils;
 
+import cn.hutool.core.util.StrUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 
@@ -56,5 +57,20 @@ public class DateUtils {
 
     public static Color getDayOfColor(int type) {
         return type == 0 || type == 3 ? Color.WHITE : Color.GREEN;
+    }
+
+    public static String getImgTime4Url(String url) {
+        String[] strs = url.split("/");
+        String day = strs[strs.length - 2];
+
+        String str = StrUtil.removeSuffix(strs[strs.length - 1], ".png");
+        strs = str.split("-");
+        str = strs[strs.length - 1];
+        int time = Integer.valueOf(str) / 1000;
+        int h = time / 3600;
+        int m = time % 3600 / 60;
+        int s = time % 3600 % 60;
+
+        return String.format("%s %02d:%02d:%02d", day, h, m, s);
     }
 }

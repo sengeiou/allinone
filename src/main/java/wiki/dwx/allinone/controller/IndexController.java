@@ -31,23 +31,14 @@ public class IndexController {
     @GetMapping(value = {"", "/"})
     public String index(Model model) {
         model.addAttribute("time", DateUtils.toTimeString(DateUtils.getNowDate()));
-        model.addAttribute("bj_img", redisTemplate.opsForValue().get("bj_img"));
 
-        String str = redisTemplate.opsForValue().get("bj_img");
-        String[] strs = str.split("/");
-        String day = strs[strs.length - 2];
+        String bjImgUrl = redisTemplate.opsForValue().get("bj_img");
+        model.addAttribute("bj_img", bjImgUrl);
+        model.addAttribute("img_time", DateUtils.getImgTime4Url(bjImgUrl));
 
-        str = StrUtil.removeSuffix(strs[strs.length - 1], ".png");
-        strs = str.split("-");
-        str = strs[strs.length - 1];
-        int time = Integer.valueOf(str) / 1000;
-        int h = time / 3600;
-        int m = time % 3600 / 60;
-        int s = time % 3600 % 60;
-
-        model.addAttribute("img_time", String.format("%s %02d:%02d:%02d", day, h, m, s));
-
-        model.addAttribute("ah_img", redisTemplate.opsForValue().get("ah_img"));
+        String ajImgUrl = redisTemplate.opsForValue().get("ah_img");
+        model.addAttribute("ah_img", ajImgUrl);
+        model.addAttribute("an_img_time", DateUtils.getImgTime4Url(ajImgUrl));
 
         return "index";
     }
