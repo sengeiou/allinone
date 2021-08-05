@@ -36,11 +36,11 @@ public class IndexController {
 
         String bjImgUrl = redisTemplate.opsForValue().get("bj_img");
         model.addAttribute("bj_img", bjImgUrl);
-        model.addAttribute("img_time", DateUtils.getImgTime4Url(bjImgUrl));
+//        model.addAttribute("img_time", DateUtils.getImgTime4Url(bjImgUrl));
 
         String ajImgUrl = redisTemplate.opsForValue().get("ah_img");
         model.addAttribute("ah_img", ajImgUrl);
-        model.addAttribute("an_img_time", DateUtils.getImgTime4Url(ajImgUrl));
+//        model.addAttribute("an_img_time", DateUtils.getImgTime4Url(ajImgUrl));
 
         // 101220303
         String whxImgUrl = redisTemplate.opsForValue().get("whxImgUrl");
@@ -50,7 +50,7 @@ public class IndexController {
             redisTemplate.opsForValue().set("whxImgUrl", whxImgUrl, Duration.ofHours(1));
         }
         model.addAttribute("whx_img", whxImgUrl);
-        model.addAttribute("whx_img_time", DateUtils.getImgTime4Url(whxImgUrl));
+//        model.addAttribute("whx_img_time", DateUtils.getImgTime4Url(whxImgUrl));
 
         // 101221406
         String gdImgUrl = redisTemplate.opsForValue().get("gdImgUrl");
@@ -60,7 +60,25 @@ public class IndexController {
             redisTemplate.opsForValue().set("gdImgUrl", gdImgUrl, Duration.ofHours(1));
         }
         model.addAttribute("gd_img", gdImgUrl);
-        model.addAttribute("gd_img_time", DateUtils.getImgTime4Url(gdImgUrl));
+//        model.addAttribute("gd_img_time", DateUtils.getImgTime4Url(gdImgUrl));
+
+        // 101080608
+        String ksktImgUrl = redisTemplate.opsForValue().get("ksktImgUrl");
+        if (StringUtils.isBlank(ksktImgUrl)) {
+            Map res = weatherSMSService.getWeather4Wc("101080608");
+            ksktImgUrl = res.get("img").toString();
+            redisTemplate.opsForValue().set("ksktImgUrl", ksktImgUrl, Duration.ofHours(1));
+        }
+        model.addAttribute("ksktImgUrl", ksktImgUrl);
+
+        // 101160808
+        String dhImgUrl = redisTemplate.opsForValue().get("dhImgUrl");
+        if (StringUtils.isBlank(dhImgUrl)) {
+            Map res = weatherSMSService.getWeather4Wc("101160808");
+            dhImgUrl = res.get("img").toString();
+            redisTemplate.opsForValue().set("dhImgUrl", dhImgUrl, Duration.ofHours(1));
+        }
+        model.addAttribute("dhImgUrl", dhImgUrl);
         return "index";
     }
 
