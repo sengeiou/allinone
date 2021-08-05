@@ -6,6 +6,7 @@ import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.cp.api.WxCpService;
 import me.chanjar.weixin.cp.bean.article.NewArticle;
 import me.chanjar.weixin.cp.bean.message.WxCpMessage;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
@@ -40,6 +41,15 @@ public class IndexController {
         model.addAttribute("ah_img", ajImgUrl);
         model.addAttribute("an_img_time", DateUtils.getImgTime4Url(ajImgUrl));
 
+        // 101220303
+        String whxImgUrl = redisTemplate.opsForValue().get("whxImgUrl");
+        if (StringUtils.isBlank(whxImgUrl)) {
+            Map res = weatherSMSService.getWeather4Wc("101220303");
+            whxImgUrl = res.get("img").toString();
+            redisTemplate.opsForValue().set("whxImgUrl", whxImgUrl);
+        }
+        model.addAttribute("whx_img", whxImgUrl);
+        model.addAttribute("whx_img_time", DateUtils.getImgTime4Url(whxImgUrl));
         return "index";
     }
 
