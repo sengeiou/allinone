@@ -44,41 +44,29 @@ public class IndexController {
 
         // 101220303
         String whxImgUrl = redisTemplate.opsForValue().get("whxImgUrl");
-        if (StringUtils.isBlank(whxImgUrl)) {
-            Map res = weatherSMSService.getWeather4Wc("101220303");
-            whxImgUrl = res.get("img").toString();
-            redisTemplate.opsForValue().set("whxImgUrl", whxImgUrl, Duration.ofHours(1));
+        if (StringUtils.isNotBlank(whxImgUrl)) {
+            model.addAttribute("whx_img", whxImgUrl);
         }
-        model.addAttribute("whx_img", whxImgUrl);
 //        model.addAttribute("whx_img_time", DateUtils.getImgTime4Url(whxImgUrl));
 
         // 101221406
         String gdImgUrl = redisTemplate.opsForValue().get("gdImgUrl");
-        if (StringUtils.isBlank(gdImgUrl)) {
-            Map res = weatherSMSService.getWeather4Wc("101221406");
-            gdImgUrl = res.get("img").toString();
-            redisTemplate.opsForValue().set("gdImgUrl", gdImgUrl, Duration.ofHours(1));
+        if (StringUtils.isNotBlank(gdImgUrl)) {
+            model.addAttribute("gd_img", gdImgUrl);
         }
-        model.addAttribute("gd_img", gdImgUrl);
 //        model.addAttribute("gd_img_time", DateUtils.getImgTime4Url(gdImgUrl));
 
         // 101080608
         String ksktImgUrl = redisTemplate.opsForValue().get("ksktImgUrl");
-        if (StringUtils.isBlank(ksktImgUrl)) {
-            Map res = weatherSMSService.getWeather4Wc("101080608");
-            ksktImgUrl = res.get("img").toString();
-            redisTemplate.opsForValue().set("ksktImgUrl", ksktImgUrl, Duration.ofHours(1));
+        if (StringUtils.isNotBlank(ksktImgUrl)) {
+            model.addAttribute("ksktImgUrl", ksktImgUrl);
         }
-        model.addAttribute("ksktImgUrl", ksktImgUrl);
 
         // 101160808
         String dhImgUrl = redisTemplate.opsForValue().get("dhImgUrl");
-        if (StringUtils.isBlank(dhImgUrl)) {
-            Map res = weatherSMSService.getWeather4Wc("101160808");
-            dhImgUrl = res.get("img").toString();
-            redisTemplate.opsForValue().set("dhImgUrl", dhImgUrl, Duration.ofHours(1));
+        if (StringUtils.isNotBlank(dhImgUrl)) {
+            model.addAttribute("dhImgUrl", dhImgUrl);
         }
-        model.addAttribute("dhImgUrl", dhImgUrl);
         return "index";
     }
 

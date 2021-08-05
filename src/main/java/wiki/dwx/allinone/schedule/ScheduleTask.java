@@ -6,6 +6,7 @@ import me.chanjar.weixin.cp.api.WxCpService;
 import me.chanjar.weixin.cp.bean.article.NewArticle;
 import me.chanjar.weixin.cp.bean.message.WxCpMessage;
 import me.chanjar.weixin.cp.bean.message.WxCpMessageSendResult;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -15,7 +16,9 @@ import wiki.dwx.allinone.service.WeatherSMSService;
 import wiki.dwx.allinone.utils.DateUtils;
 
 import javax.annotation.Resource;
+import java.time.Duration;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @Component
@@ -118,4 +121,45 @@ public class ScheduleTask {
 //            sctFtqqService.sendMSG("北京昌平天气预报", sms2, "SCT4256T1qVLRM9qwwAQ45wUqeY1HE91");
 //        }
     }
+
+    @Scheduled(cron = "0 0/10 * * * ? *")
+    public void cron() {
+        log.info("cron:" + DateUtils.toTimeString(DateUtils.getNowDate()));
+
+        // 101220303
+        String whxImgUrl = redisTemplate.opsForValue().get("whxImgUrl");
+        if (StringUtils.isBlank(whxImgUrl)) {
+            Map res = weatherSMSService.getWeather4Wc("101220303");
+            whxImgUrl = res.get("img").toString();
+            redisTemplate.opsForValue().set("whxImgUrl", whxImgUrl, 60, TimeUnit.MINUTES);
+            return;
+        }
+
+        // 101221406
+        String gdImgUrl = redisTemplate.opsForValue().get("gdImgUrl");
+        if (StringUtils.isBlank(gdImgUrl)) {
+            Map res = weatherSMSService.getWeather4Wc("101221406");
+            gdImgUrl = res.get("img").toString();
+            redisTemplate.opsForValue().set("gdImgUrl", gdImgUrl, 60, TimeUnit.MINUTES);
+            return;
+        }
+
+        // 101080608
+        String ksktImgUrl = redisTemplate.opsForValue().get("ksktImgUrl");
+        if (StringUtils.isBlank(ksktImgUrl)) {
+            Map res = weatherSMSService.getWeather4Wc("101080608");
+            ksktImgUrl = res.get("img").toString();
+            redisTemplate.opsForValue().set("ksktImgUrl", ksktImgUrl, 60, TimeUnit.MINUTES);
+            return;
+        }
+
+        // 101160808
+        String dhImgUrl = redisTemplate.opsForValue().get("dhImgUrl");
+        if (StringUtils.isBlank(dhImgUrl)) {
+            Map res = weatherSMSService.getWeather4Wc("101160808");
+            dhImgUrl = res.get("img").toString();
+            redisTemplate.opsForValue().set("dhImgUrl", dhImgUrl, 60, TimeUnit.MINUTES);
+        }
+    }
+
 }
