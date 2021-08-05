@@ -1,6 +1,5 @@
 package wiki.dwx.allinone.controller;
 
-import cn.hutool.core.util.StrUtil;
 import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.cp.api.WxCpService;
@@ -18,7 +17,6 @@ import wiki.dwx.allinone.service.WeatherSMSService;
 import wiki.dwx.allinone.utils.DateUtils;
 
 import javax.annotation.Resource;
-import java.time.Duration;
 import java.util.Map;
 
 @Slf4j
