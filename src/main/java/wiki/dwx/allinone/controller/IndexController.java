@@ -18,6 +18,7 @@ import wiki.dwx.allinone.service.WeatherSMSService;
 import wiki.dwx.allinone.utils.DateUtils;
 
 import javax.annotation.Resource;
+import java.time.Duration;
 import java.util.Map;
 
 @Slf4j
@@ -46,7 +47,7 @@ public class IndexController {
         if (StringUtils.isBlank(whxImgUrl)) {
             Map res = weatherSMSService.getWeather4Wc("101220303");
             whxImgUrl = res.get("img").toString();
-            redisTemplate.opsForValue().set("whxImgUrl", whxImgUrl);
+            redisTemplate.opsForValue().set("whxImgUrl", whxImgUrl, Duration.ofHours(1));
         }
         model.addAttribute("whx_img", whxImgUrl);
         model.addAttribute("whx_img_time", DateUtils.getImgTime4Url(whxImgUrl));

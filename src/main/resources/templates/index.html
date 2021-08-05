@@ -3,7 +3,7 @@
 <head>
     <title>首页</title>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script th:src="@{/js/jquery-3.5.1.min.js}"></script>
     <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
     <script th:src="@{/js/bootstrap.min.js}"></script>
@@ -22,31 +22,41 @@
         <span class="navbar-brand mb-0 h1">首页</span>
     </div>
 </nav>
-<div id="he-plugin-standard"></div>
-<p th:text="${time}"></p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6"><img th:src="${bj_img}"></div>
+        <div class="col-md-6"><img th:src="${ah_img}"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-6"><img th:src="${whx_img}"></div>
+    </div>
+</div>
 
-<img th:src="${bj_img}" width="60%">
-<p th:text="${img_time}"></p>
+<!--<div id="he-plugin-standard"></div>-->
+<!--<p th:text="${time}"></p>-->
 
-<img th:src="${ah_img}" width="60%">
-<p th:text="${an_img_time}"></p>
+<!--<img th:src="${bj_img}" width="60%">-->
+<!--<p th:text="${img_time}"></p>-->
 
-<img th:src="${whx_img}" width="60%">
-<p th:text="${whx_img_time}"></p>
+<!--<img th:src="${ah_img}" width="60%">-->
+<!--<p th:text="${an_img_time}"></p>-->
 
-<script>
-    WIDGET = {
-        "CONFIG": {
-            "layout": "2",
-            "width": 345,
-            "height": 405,
-            "background": "1",
-            "dataColor": "FFFFFF",
-            "borderRadius": "5",
-            "key": "c65d7229ce2e4ee38920f50e96d1e505"
-        }
-    }
-</script>
-<script src="https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0"></script>
+<!--<img th:src="${whx_img}" width="60%">-->
+<!--<p th:text="${whx_img_time}"></p>-->
+
+<!--<script>-->
+<!--    WIDGET = {-->
+<!--        "CONFIG": {-->
+<!--            "layout": "2",-->
+<!--            "width": 345,-->
+<!--            "height": 405,-->
+<!--            "background": "1",-->
+<!--            "dataColor": "FFFFFF",-->
+<!--            "borderRadius": "5",-->
+<!--            "key": "c65d7229ce2e4ee38920f50e96d1e505"-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+<!--<script src="https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0"></script>-->
 </body>
 </html>
