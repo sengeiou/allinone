@@ -131,7 +131,8 @@ public class ScheduleTask {
         if (StringUtils.isBlank(whxImgUrl)) {
             Map res = weatherSMSService.getWeather4Wc("101220303");
             whxImgUrl = res.get("img").toString();
-            redisTemplate.opsForValue().set("whxImgUrl", whxImgUrl, 60, TimeUnit.MINUTES);
+            redisTemplate.opsForValue().set("whxImgUrl", whxImgUrl, 90, TimeUnit.MINUTES);
+            log.info("TQ:" + 101220303);
             return;
         }
 
@@ -140,7 +141,8 @@ public class ScheduleTask {
         if (StringUtils.isBlank(gdImgUrl)) {
             Map res = weatherSMSService.getWeather4Wc("101221406");
             gdImgUrl = res.get("img").toString();
-            redisTemplate.opsForValue().set("gdImgUrl", gdImgUrl, 60, TimeUnit.MINUTES);
+            redisTemplate.opsForValue().set("gdImgUrl", gdImgUrl, 90, TimeUnit.MINUTES);
+            log.info("TQ:" + 101221406);
             return;
         }
 
@@ -149,7 +151,8 @@ public class ScheduleTask {
         if (StringUtils.isBlank(ksktImgUrl)) {
             Map res = weatherSMSService.getWeather4Wc("101080608");
             ksktImgUrl = res.get("img").toString();
-            redisTemplate.opsForValue().set("ksktImgUrl", ksktImgUrl, 60, TimeUnit.MINUTES);
+            redisTemplate.opsForValue().set("ksktImgUrl", ksktImgUrl, 90, TimeUnit.MINUTES);
+            log.info("TQ:" + 101080608);
             return;
         }
 
@@ -158,7 +161,8 @@ public class ScheduleTask {
         if (StringUtils.isBlank(dhImgUrl)) {
             Map res = weatherSMSService.getWeather4Wc("101160808");
             dhImgUrl = res.get("img").toString();
-            redisTemplate.opsForValue().set("dhImgUrl", dhImgUrl, 60, TimeUnit.MINUTES);
+            redisTemplate.opsForValue().set("dhImgUrl", dhImgUrl, 90, TimeUnit.MINUTES);
+            log.info("TQ:" + 101160808);
         }
     }
 
