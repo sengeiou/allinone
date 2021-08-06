@@ -41,6 +41,7 @@ public class WeatherSMSServiceImpl implements WeatherSMSService {
 
     @Override
     public Map getWeather4Wc(String location) {
+        log.info("location:" + location);
         DateTime dateTime = new DateTime(DateUtils.getNowDate());
         log.info(location + ":" + dateTime.getHourOfDay());
         HashMap<String, String> res = new HashMap<>();
