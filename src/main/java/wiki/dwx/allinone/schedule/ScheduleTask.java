@@ -123,7 +123,7 @@ public class ScheduleTask {
     }
 
     @Scheduled(cron = "0 0/10 * * * ?")
-    public void cron() {
+    public void myCron() {
         log.info("cron:" + DateUtils.toTimeString(DateUtils.getNowDate()));
 
         // 101220303
