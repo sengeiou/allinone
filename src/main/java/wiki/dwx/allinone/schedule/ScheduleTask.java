@@ -127,41 +127,37 @@ public class ScheduleTask {
         log.info("cron:" + DateUtils.toTimeString(DateUtils.getNowDate()));
 
         // 101220303
-        String whxImgUrl = redisTemplate.opsForValue().get("whxImgUrl");
-        if (StringUtils.isBlank(whxImgUrl)) {
+        Long t = redisTemplate.opsForValue().getOperations().getExpire("whxImgUrl", TimeUnit.MINUTES);
+        if (t == null || t <= 20) {
             Map res = weatherSMSService.getWeather4Wc("101220303");
-            whxImgUrl = res.get("img").toString();
-            redisTemplate.opsForValue().set("whxImgUrl", whxImgUrl, 90, TimeUnit.MINUTES);
+            redisTemplate.opsForValue().set("whxImgUrl", res.get("img").toString(), 90, TimeUnit.MINUTES);
             log.info("TQ:" + 101220303);
             return;
         }
 
         // 101221406
-        String gdImgUrl = redisTemplate.opsForValue().get("gdImgUrl");
-        if (StringUtils.isBlank(gdImgUrl)) {
+        t = redisTemplate.opsForValue().getOperations().getExpire("gdImgUrl", TimeUnit.MINUTES);
+        if (t == null || t <= 20) {
             Map res = weatherSMSService.getWeather4Wc("101221406");
-            gdImgUrl = res.get("img").toString();
-            redisTemplate.opsForValue().set("gdImgUrl", gdImgUrl, 90, TimeUnit.MINUTES);
+            redisTemplate.opsForValue().set("gdImgUrl", res.get("img").toString(), 90, TimeUnit.MINUTES);
             log.info("TQ:" + 101221406);
             return;
         }
 
         // 101080608
-        String ksktImgUrl = redisTemplate.opsForValue().get("ksktImgUrl");
-        if (StringUtils.isBlank(ksktImgUrl)) {
+        t = redisTemplate.opsForValue().getOperations().getExpire("ksktImgUrl", TimeUnit.MINUTES);
+        if (t == null || t <= 20) {
             Map res = weatherSMSService.getWeather4Wc("101080608");
-            ksktImgUrl = res.get("img").toString();
-            redisTemplate.opsForValue().set("ksktImgUrl", ksktImgUrl, 90, TimeUnit.MINUTES);
+            redisTemplate.opsForValue().set("ksktImgUrl", res.get("img").toString(), 90, TimeUnit.MINUTES);
             log.info("TQ:" + 101080608);
             return;
         }
 
         // 101160808
-        String dhImgUrl = redisTemplate.opsForValue().get("dhImgUrl");
-        if (StringUtils.isBlank(dhImgUrl)) {
+        t = redisTemplate.opsForValue().getOperations().getExpire("dhImgUrl", TimeUnit.MINUTES);
+        if (t == null || t <= 20) {
             Map res = weatherSMSService.getWeather4Wc("101160808");
-            dhImgUrl = res.get("img").toString();
-            redisTemplate.opsForValue().set("dhImgUrl", dhImgUrl, 90, TimeUnit.MINUTES);
+            redisTemplate.opsForValue().set("dhImgUrl", res.get("img").toString(), 90, TimeUnit.MINUTES);
             log.info("TQ:" + 101160808);
         }
     }
