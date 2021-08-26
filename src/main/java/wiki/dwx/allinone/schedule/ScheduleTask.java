@@ -131,8 +131,8 @@ public class ScheduleTask {
         if (t == null || t <= 20) {
             Map res = weatherSMSService.getWeather4Wc("101220303");
             redisTemplate.opsForValue().set("whxImgUrl", res.get("img").toString(), 90, TimeUnit.MINUTES);
-            log.info("TQ:" + 101220303);
-            return;
+//            log.info("TQ:" + 101220303);
+//            return;
         }
 
         // 101221406
@@ -140,8 +140,8 @@ public class ScheduleTask {
         if (t == null || t <= 20) {
             Map res = weatherSMSService.getWeather4Wc("101221406");
             redisTemplate.opsForValue().set("gdImgUrl", res.get("img").toString(), 90, TimeUnit.MINUTES);
-            log.info("TQ:" + 101221406);
-            return;
+//            log.info("TQ:" + 101221406);
+//            return;
         }
 
         // 101080608
@@ -149,8 +149,8 @@ public class ScheduleTask {
         if (t == null || t <= 20) {
             Map res = weatherSMSService.getWeather4Wc("101080608");
             redisTemplate.opsForValue().set("ksktImgUrl", res.get("img").toString(), 90, TimeUnit.MINUTES);
-            log.info("TQ:" + 101080608);
-            return;
+//            log.info("TQ:" + 101080608);
+//            return;
         }
 
         // 101160808
@@ -158,7 +158,7 @@ public class ScheduleTask {
         if (t == null || t <= 20) {
             Map res = weatherSMSService.getWeather4Wc("101160808");
             redisTemplate.opsForValue().set("dhImgUrl", res.get("img").toString(), 90, TimeUnit.MINUTES);
-            log.info("TQ:" + 101160808);
+//            log.info("TQ:" + 101160808);
         }
     }
 
